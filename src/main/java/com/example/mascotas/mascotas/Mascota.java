@@ -36,10 +36,10 @@ public class Mascota {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_cliente")
     @JsonBackReference("cliente-mascotas")
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "mascotas"})  // ← AGREGAR ESTO
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "mascotas"})
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "mascota", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "mascota", cascade = CascadeType.ALL, fetch = FetchType.EAGER)  // ← CAMBIADO
     @JsonManagedReference("mascota-servicios")
     private List<MascotaServicio> mascotaServicios;
 }
