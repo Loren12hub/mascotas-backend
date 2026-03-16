@@ -13,5 +13,5 @@ COPY --from=build /app/target/*.jar app.jar
 # Puerto que usa Spring Boot
 EXPOSE 8080
 
-# Comando para ejecutar la aplicación
-ENTRYPOINT ["java", "-jar", "app.jar", "--spring.profiles.active=prod", "--server.port=8080"]
+
+CMD ["java", "-jar", "app.jar", "--spring.profiles.active=prod"]
