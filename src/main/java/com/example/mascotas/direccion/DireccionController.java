@@ -9,7 +9,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/direccion")
-@CrossOrigin(origins = "http://localhost:5173")
 public class DireccionController {
 
     @Autowired
